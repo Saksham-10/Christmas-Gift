@@ -1,0 +1,42 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { height: 100vh; width: 100vw; overflow: hidden; background: #000; font-family: sans-serif; }
+
+#wallpaper { position: fixed; inset: 0; background: url('website.png') no-repeat center center fixed; background-size: cover; filter: brightness(0.5); z-index: 1; transition: transform 15s ease-out; }
+
+/* THE FIX: Pointer-events none allows clicks to pass through to buttons */
+#snow { position: fixed; inset: 0; pointer-events: none; z-index: 2; }
+
+#santaGif { position: fixed; top: 2%; left: -600px; width: 320px; z-index: 5; pointer-events: none; display: none; }
+#secret-star { position: fixed; top: 4%; right: 4%; font-size: 1.5rem; cursor: pointer; z-index: 60; animation: pulse 3s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.2); } }
+
+/* UI Layout */
+#hubs-wrapper { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 100; width: max-content; }
+.hub-box { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.2); padding: 15px; border-radius: 20px; text-align: center; width: 190px; }
+.games-hub-wide { width: 240px; }
+.grid-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+.hub-text { font-family: 'Dancing Script', cursive; color: #fff; font-size: 1rem; margin-bottom: 10px; }
+.m-btn { background: transparent; border: 1px solid #d4a373; color: #fff; padding: 8px; border-radius: 50px; cursor: pointer; font-size: 0.8rem; transition: 0.3s; width: 100%; }
+.m-btn:hover { background: #d4a373; }
+
+#overlay { position: fixed; inset: 0; background: #0b0605; display: flex; justify-content: center; align-items: center; z-index: 1000; transition: opacity 1s; }
+#enterBtn { padding: 15px 40px; font-family: 'Dancing Script', cursive; font-size: 2rem; background: transparent; color: #fff; border: 2px solid #d4a373; border-radius: 50px; cursor: pointer; }
+
+/* Modals */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 500; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
+.message-card { background: #fffcf5; padding: 30px; border-radius: 20px; width: 400px; height: 50vh; position: relative; border: 3px solid #d4a373; }
+.message-scroll-area { height: 100%; overflow-y: auto; font-family: 'Dancing Script', cursive; font-size: 1.4rem; line-height: 1.6; text-align: left; }
+.santa-theme { background: linear-gradient(135deg, #8e0e00, #5a0a00); border: 4px solid #d4a373; padding: 30px; border-radius: 20px; position: relative; width: 380px; height: 450px; color: white; }
+.close-btn { position: absolute; top: 10px; right: 20px; font-size: 2rem; cursor: pointer; color: #fff; z-index: 600; }
+.message-card .close-btn { color: #888; }
+
+.memory-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 15px; }
+.card { background: #d4a373; height: 70px; border-radius: 8px; cursor: pointer; color: transparent; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+.card.flipped { background: #fff; color: #000; pointer-events: none; }
+
+#sleigh, #chimney { position: absolute; font-size: 3rem; }
+#sleigh { top: 60px; } #chimney { bottom: 30px; }
+.dropping-gift { position: absolute; font-size: 2rem; }
+
+.hidden, .hidden-game { display: none !important; }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wallpaper"></div>
+
+    <canvas id="snow"></canvas>
+    
+    <div id="secret-star" class="hidden">✨</div>
+    <img id="santaGif" src="Happy Holidays.gif" alt="Santa">
+
+    <div id="hubs-wrapper" class="hidden">
+        <div class="hub-box">
+            <p class="hub-text">Wanna hear a song?</p>
+            <button id="surpriseBtn" class="m-btn">Surprise Me ✨</button>
+        </div>
+
+        <div class="hub-box">
+            <p class="hub-text">A Heartfelt Note</p>
+            <button id="openMsgBtn" class="m-btn">Read Message 💌</button>
+        </div>
+
+        <div class="hub-box games-hub-wide">
+            <p class="hub-text">Santa's Arcade 🕹️</p>
+            <div class="grid-controls">
+                <button id="catchGameBtn" class="m-btn">❄️ Catch</button>
+                <button id="memoryGameBtn" class="m-btn">🎁 Match</button>
+                <button id="dropGameBtn" class="m-btn">🛷 Drop</button>
+                <button id="riddleGameBtn" class="m-btn">🎅 Riddle</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay"><button id="enterBtn">Enter 🔥</button></div>
+    
+    <audio id="bg-music" src="we_wish_you.mp3" loop></audio>
+    <audio id="music-player"></audio>
+
+    <div id="personal-message-overlay" class="modal hidden-game">
+        <div class="message-card">
+            <span class="close-btn" id="closePersonalMsg">&times;</span>
+            <div class="message-scroll-area">
+                <h2>Merry Christmas, My Love ❤️</h2>
+                <p>Distance might separate Ranchi and Gurgaon today, but you're right here in my heart.</p>
+                <p>You're the best part of my year. I hope this brings a bit of holiday magic to your day!</p>
+                <p>Always yours,<br>Saksham ❤️</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-overlay" class="modal hidden-game">
+        <div class="game-box santa-theme">
+            <span class="close-btn" id="closeGame">&times;</span>
+            <div id="game-canvas"></div>
+        </div>
+    </div>
+
+    <div id="letter-overlay" class="modal hidden-game">
+        <div class="letter-box">
+            <span class="close-btn" id="closeLetter">&times;</span>
+            <h2>Secret Note ✨</h2>
+            <div class="letter-content"><p>You found the North Star! You're my favorite miracle.</p></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
